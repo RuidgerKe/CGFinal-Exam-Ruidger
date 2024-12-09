@@ -47,6 +47,7 @@ The implementation of this shader was base on combining the specular shader alon
 ![alt text](image-8.png)
 By ensuring each individual element was repersented within the code, the outline and the specular shader would appear alongside each othe within the final build. The use of specular highlight also makes the gold more reallistic and feel as if it wasa metal. The use of the gold texture sells the point home that it is in fact gold. 
 
+
 # Conclusion
 Overall, I understand that I have taken a giant step away from the original game's art style and atmosphere. However, I do think that these intergration of shaders make for a decent Boo-themed level if the game was to get a graphical overhaul.
 By still adding some elements that are more cartoony and less realistic, like the solid outline effect for the gold coin, and the color correction on Yoshi reloading. There is still some reference to the original beloved game.
