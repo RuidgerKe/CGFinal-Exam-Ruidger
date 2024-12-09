@@ -26,3 +26,23 @@ The main decision behind this addition was to make it more realistic. By having 
 I also add the scrolling effect onto the normal and the bump mapping to ensure that the 3D effect is applied to th scrolling effect as well.
 It would look incredible awkward if the normals are static andeverything else was moving by the player. 
 Which works for my level of this game, which is the running through the forest and shooting Boos!
+
+# Shaedr 3 Rimlighting Shader
+I then created a shader for my boo enemy. After realizing the thematic I wanted my shaders to fullfill base on this game. I realized I needed to make a special shader for a more realistic Boo. 
+Boo being a ghost would appear transparent or with a rimlighting to give it a supernatural look to it. 
+Which is then I decided to go with the rimlighting. The main reason I deicded to go with the rimlighting and not the hologram shader is that rimlighting still appears solid which will give the player the idea that they can still shoot this enemy. 
+Hologram being mainly transparent might give the wrong idea to the player and can be harder to see base on this backdrop. Thus the rimlighting was elected instead of the hologram shader. 
+![alt text](image-4.png)
+The first part of this shader is the implementation of the rimlighting. By adding the queue = transparent it ensure that the rimlighting will still show the texture of the Boo enemy. 
+![alt text](image-6.png)
+The next part of this shader is the addition of my good old friend SinTime. The reason I used sintime for therimlighting is to give a transformation phase.
+This shader will be implementedin between two phases, one where the boo doesn't see the player, which is when the rimlighting ismore calm with a white effect, and the other phase where the Boo is hostile t the player with its red rimlighing. 
+This inbetween shader helps bridge together both phases so that the transformation isn't sudden to the player. This also helps the player to know which Boo to prioritize to shoot over the others base on which ones are transforming. 
+
+# Shader 4 Gold Shader
+The last shader I implemented for this task was the gold shader. This is for when Mario defeats an enemy and a gold coin spawns in. To maintain that realism I used a specular shader to ensure taht the gold coin feels similar to how a real gold coin would react to light.
+The other aspect I tried to implement is an outline shader to at least play homage to the original toon stylized game. This also helps make the gold coin stand out compared to the dark backdrop it is put agaisnt. 
+![alt text](image-7.png)
+The implementation of this shader was base on combining the specular shader alongside the basic outline shader. 
+![alt text](image-8.png)
+By ensuring each individual element was repersented within the code, the outline and the specular shader would appear alongside each othe within the final build. 
