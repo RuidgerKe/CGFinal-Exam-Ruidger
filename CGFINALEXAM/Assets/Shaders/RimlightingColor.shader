@@ -38,8 +38,8 @@ Shader "Custom/RimlightingColor"
         void surf (Input IN, inout SurfaceOutput o){
             o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
             half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
-            o.Emission = (_RimColor.rgb * pow(rim, _RimPower) * 10) +_SinTime.a;
-            o.Alpha = pow(rim, _RimPower);
+            o.Emission = (_RimColor.rgb * pow(rim, _RimPower) * 10) +_SinTime.r;
+            o.Alpha = pow(rim, _RimPower) +_SinTime.a;
             }
         ENDCG
     }

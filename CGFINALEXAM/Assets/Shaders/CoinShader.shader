@@ -3,8 +3,8 @@ Shader "Custom/CoinShader"
     Properties
     {
          _Color ("Color", Color) = (1, 1, 1, 1)
-        _MetallicTex ("Metallic (R)", 2D) = "white"{}
-        //_Metallic ("Metallic", Range(0.0, 1.0)) = 0.0
+        _GoldTex ("Metallic (R)", 2D) = "white"{}
+        
         _SpecColor ("Specular", Color) = (1, 1, 1, 1)
           _Outline ("OutlineWidth", Range(-1,1)) = 0
       _OutlineColor ("Color", Color) = (0, 0, 0, 1)
@@ -37,7 +37,7 @@ Shader "Custom/CoinShader"
         CGPROGRAM
         #pragma surface surf StandardSpecular
 
-        sampler2D _MetallicTex;
+        sampler2D _GoldTex;
         half _Metallic;
         fixed4 _Color;
 
@@ -49,8 +49,9 @@ Shader "Custom/CoinShader"
         void surf(Input IN, inout SurfaceOutputStandardSpecular o)
         {
             o.Albedo = _Color.rgb;
-            o.Smoothness = tex2D (_MetallicTex, IN.uv_MetallicTex).r;
+            o.Smoothness = tex2D (_GoldTex, IN.uv_MetallicTex).r;
             o.Specular = _SpecColor.rgb;
+            
         }
 
 

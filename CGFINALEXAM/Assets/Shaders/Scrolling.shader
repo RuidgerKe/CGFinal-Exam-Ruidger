@@ -35,9 +35,10 @@ Shader "Custom/Scrolling"
            _ScrollY *= _Time;
            float3 grass = (tex2D(_MainTex, IN.uv_MainTex + float2(_ScrollX, _ScrollY)));
            float3 wind = (tex2D(_WindTex, IN.uv_MainTex + float2(_ScrollX/2.0, _ScrollY/2.0)));
-           float3 normal = (tex2D(_Normal, IN.uv_MainTex + float2(_ScrollX/2.0, _ScrollY/2.0)));
-           o.Normal =UnpackNormal(tex2D(_Normal, IN.uv_Normal));
+          float3 normal = (tex2D(_Normal, IN.uv_MainTex + float2(_ScrollX, _ScrollY)));
+           o.Normal =UnpackNormal(tex2D(_Normal, IN.uv_Normal+ float2(_ScrollX, _ScrollY)));
             o.Normal *= float3 (_BumpAmount, _BumpAmount, 1);
+            
            o.Albedo = (grass + wind + normal)/2.0;
            }
 
