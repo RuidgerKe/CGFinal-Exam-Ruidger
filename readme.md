@@ -18,6 +18,7 @@ The next mandetory shader for me to implement was the scrolling shader. With the
 Even if the player themselves aren't actually moving and are static. By implementing this scrolling shader, it gives the illusion of movement rather than actually make them move around an open level. 
 For the type of game this is, it's more optimal and resource saving to have everything move around th player rather than the player move themselve. As the perspective of the player stays consistent throughout the playthrough. 
 It was during the implementation of this shader that I wanted to go a more spooky atmosphere. By adding a wind effect similar to that of the foam from the wave shader, it gives a more ominous atmosphere that I really liked. 
+The implementation of the wind effect on both the forest and the grass works to also give the illusion that the player is moving quickly as well. By changing the speed of the wind you can make the player feel as if they are moving at a quicker pace. 
 This can be for the level in which Mario is dealing with the Boo type enemines, which are ghosts themselves. 
 ![alt text](image-1.png)
 The second implementation I tried to add was the bump mapping.
